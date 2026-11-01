@@ -441,4 +441,36 @@
     });
   }
 
+
+  /* --- Awwwards Trailing Cursor Glow Engine (EchoBuilds Style) ------ */
+  if (window.matchMedia("(pointer: fine)").matches) {
+    const follower = document.createElement("div");
+    follower.className = "cursor-follower";
+    follower.setAttribute("aria-hidden", "true");
+    document.body.appendChild(follower);
+
+    let mouseX = -100, mouseY = -100;
+    let followerX = -100, followerY = -100;
+
+    window.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    }, { passive: true });
+
+    function renderCursor() {
+      followerX += (mouseX - followerX) * 0.16;
+      followerY += (mouseY - followerY) * 0.16;
+      follower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(renderCursor);
+    }
+    requestAnimationFrame(renderCursor);
+
+    // Expand on interactive elements
+    const interactiveEls = document.querySelectorAll("a, button, .service-card, .why-card, .sandbox-chip, .metric-card, .ps-card");
+    interactiveEls.forEach((el) => {
+      el.addEventListener("mouseenter", () => follower.classList.add("hovering"));
+      el.addEventListener("mouseleave", () => follower.classList.remove("hovering"));
+    });
+  }
+
 })();
