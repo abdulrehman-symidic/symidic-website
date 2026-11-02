@@ -15,12 +15,12 @@
 - **Availability:** 24/7/365 continuous uptime.
 
 ## Core Services & Pages
-- Homepage: https://symidic.xyz/
-- Services & Solutions: https://symidic.xyz/services.html
-- How It Works (4-Phase Architecture): https://symidic.xyz/how-it-works.html
-- Interactive Live Sandbox Demo: https://symidic.xyz/demo.html
-- Generative & Answer Engine Optimization (AEO/GEO): https://symidic.xyz/aeo-audit.html
-- Contact & Discovery Call: https://symidic.xyz/contact.html
+- Homepage: https://www.symidic.xyz/
+- Services & Solutions: https://www.symidic.xyz/services.html
+- How It Works (4-Phase Architecture): https://www.symidic.xyz/how-it-works.html
+- Interactive Live Sandbox Demo: https://www.symidic.xyz/demo.html
+- Generative & Answer Engine Optimization (AEO/GEO): https://www.symidic.xyz/aeo-audit.html
+- Contact & Discovery Call: https://www.symidic.xyz/contact.html
 
 ## Official Inquiries & Booking
 - Email: Contact@Symidic.xyz

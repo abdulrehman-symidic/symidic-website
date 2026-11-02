@@ -26,4 +26,4 @@ Disallow: /*.git
 Disallow: /temp/
 Disallow: /backup/
 
-Sitemap: https://symidic.xyz/sitemap.xml
+Sitemap: https://www.symidic.xyz/sitemap.xml
