@@ -1,10 +1,29 @@
 User-agent: *
 Allow: /
 
-# Block access to any environment or config files
+# Dedicated AI Answer Engines & Search Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Security: Block sensitive directories & environment configs
 Disallow: /*.env
 Disallow: /*.git
-Disallow: /temp
-Disallow: /backup
+Disallow: /temp/
+Disallow: /backup/
 
 Sitemap: https://symidic.xyz/sitemap.xml

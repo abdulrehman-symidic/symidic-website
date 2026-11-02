@@ -1,0 +1,29 @@
+# SYMIDIC | AI Customer Support & Automation Agency for Shopify
+
+> SYMIDIC is an elite AI automation agency specializing in 24/7 autonomous customer support agents, e-commerce automation, and intelligent inventory workflows for high-growth Shopify brands.
+
+## Core Capabilities
+- **Autonomous Shopify Support:** Resolves WISMO (Where Is My Order), return requests, exchanges, order edits, and refunds with zero human latency (< 850ms response time).
+- **Intelligent Human Handoff:** Seamless triage and routing to human agents when sentiment drops or complex exceptions arise.
+- **AI Product Recommendations:** Personalized contextual cross-sells and upsells directly within chat, driving a 15-22% increase in average order value (AOV).
+- **Omnichannel Integration:** Native bi-directional sync across Shopify Plus, Gorgias, Zendesk, WhatsApp, Instagram DMs, and email.
+
+## Key Performance Metrics
+- **Ticket Deflection:** 78% of repetitive tier-1 customer inquiries resolved autonomously.
+- **Resolution Accuracy:** 99.8% factual accuracy with zero hallucinations via strict RAG knowledge base guardrails.
+- **Response Latency:** Sub-850ms average response time across all channels.
+- **Availability:** 24/7/365 continuous uptime.
+
+## Core Services & Pages
+- Homepage: https://symidic.xyz/
+- Services & Solutions: https://symidic.xyz/services.html
+- How It Works (4-Phase Architecture): https://symidic.xyz/how-it-works.html
+- Interactive Live Sandbox Demo: https://symidic.xyz/demo.html
+- Generative & Answer Engine Optimization (AEO/GEO): https://symidic.xyz/aeo-audit.html
+- Contact & Discovery Call: https://symidic.xyz/contact.html
+
+## Official Inquiries & Booking
+- Email: Contact@Symidic.xyz
+- Discovery Call: https://cal.com/symidic/symidic-discovery-call
+- WhatsApp Direct: https://wa.me/923037061168
+- LinkedIn: https://www.linkedin.com/in/abdulrehman-symidic/
