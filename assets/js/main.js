@@ -298,19 +298,18 @@
   const macbookScene = document.querySelector(".macbook-scene");
   const macbookContainer = document.querySelector(".macbook-container");
   if (macbookLid && macbookScene && macbookContainer) {
-    const BASE_TILT_X = 22; // Natural 3D isometric pitch
-    const BASE_TILT_Y = -6; // Subtle aesthetic angle facing the hero copy
+    const BASE_TILT_X = 14; // Refined 3D isometric pitch (sleek, perfectly fitted to fold)
+    const BASE_TILT_Y = -4; // Subtle aesthetic angle facing the hero copy
     let mouseTiltX = 0, mouseTiltY = 0;
     let currentTiltX = BASE_TILT_X, currentTiltY = BASE_TILT_Y;
-    let targetLidRotate = -28;
-    let currentLidRotate = -28;
+    let targetLidRotate = -16; // Refined lid angle (upright, highly legible retina screen)
+    let currentLidRotate = -16;
 
     // Scroll-driven lid opening: smoothly unfolds as user scrolls
     function updateScrollLid() {
       const scrollY = window.scrollY || window.pageYOffset;
       const progress = Math.min(Math.max(scrollY / 450, 0), 1);
-      // Lid rotates from -28deg (sleek semi-open) to +8deg (open wide leaning back)
-      targetLidRotate = -28 + (progress * 36);
+      targetLidRotate = -16 + (progress * 22);
     }
     window.addEventListener("scroll", updateScrollLid, { passive: true });
     updateScrollLid();
@@ -472,5 +471,73 @@
       el.addEventListener("mouseleave", () => follower.classList.remove("hovering"));
     });
   }
+
+
+  /* --- High-End Typewriter Engine (Silicon Valley / GitHub Style) --- */
+  const typewriterElements = document.querySelectorAll(".typewriter");
+  typewriterElements.forEach((el) => {
+    let phrases = [];
+    try {
+      phrases = JSON.parse(el.getAttribute("data-phrases") || "[]");
+    } catch (e) {
+      phrases = [el.textContent.trim()];
+    }
+    if (!phrases.length) return;
+
+    let phraseIndex = 0;
+    let charIndex = phrases[0].length;
+    let isDeleting = false;
+    let isPaused = true;
+
+    let cursor = el.nextElementSibling;
+    if (!cursor || !cursor.classList.contains("typewriter-cursor")) {
+      cursor = document.createElement("span");
+      cursor.className = "typewriter-cursor";
+      cursor.setAttribute("aria-hidden", "true");
+      el.parentNode.insertBefore(cursor, el.nextSibling);
+    }
+
+    function typeLoop() {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isPaused) {
+        setTimeout(() => {
+          isPaused = false;
+          isDeleting = true;
+          typeLoop();
+        }, 2200);
+        return;
+      }
+
+      if (isDeleting) {
+        charIndex--;
+        el.textContent = currentPhrase.substring(0, charIndex);
+
+        if (charIndex <= 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeLoop, 350);
+          return;
+        }
+        setTimeout(typeLoop, 38);
+      } else {
+        charIndex++;
+        el.textContent = currentPhrase.substring(0, charIndex);
+
+        if (charIndex === currentPhrase.length) {
+          isPaused = true;
+          typeLoop();
+          return;
+        }
+        setTimeout(typeLoop, 65);
+      }
+    }
+
+    setTimeout(() => {
+      isPaused = false;
+      isDeleting = true;
+      typeLoop();
+    }, 2400);
+  });
 
 })();

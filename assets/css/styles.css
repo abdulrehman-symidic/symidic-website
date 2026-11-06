@@ -315,7 +315,7 @@ h4 { font-size: 16px; letter-spacing: -0.01em; }
 
 /* --- Hero ------------------------------------------------------------- */
 .hero {
-  padding: 130px 0 100px;
+  padding: 105px 0 70px;
   position: relative;
   overflow: hidden;
 }
@@ -335,12 +335,70 @@ h4 { font-size: 16px; letter-spacing: -0.01em; }
 .hero-grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
   position: relative;
   z-index: 1;
 }
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+.hero h1 {
+  font-size: clamp(34px, 3.8vw, 54px);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  margin: 16px 0 18px;
+}
+.hero-brand-line {
+  color: #f1f5f9;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  display: inline-block;
+}
+.hero .lead {
+  font-size: 16px;
+  color: #94a3b8;
+  max-width: 560px;
+  line-height: 1.62;
+}
+.hero .lead strong.text-white {
+  color: #f8fafc;
+  font-weight: 600;
+}
+.hero-feature-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  margin-bottom: 22px;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  font-size: 12px;
+  font-weight: 600;
+  color: #cbd5e1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  transition: all 0.2s ease;
+}
+.hero-pill:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-1px);
+}
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.pill-dot.emerald { background: #10b981; box-shadow: 0 0 8px #10b981; }
+.pill-dot.cyan { background: #06b6d4; box-shadow: 0 0 8px #06b6d4; }
+.pill-dot.violet { background: #a855f7; box-shadow: 0 0 8px #a855f7; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
 .hero-note {
   font-size: 13px;
   color: var(--muted2);
@@ -404,17 +462,26 @@ h4 { font-size: 16px; letter-spacing: -0.01em; }
 
 .macbook-scene {
   width: 100%;
-  max-width: 580px;
+  max-width: 530px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.macbook-scene::before {
+  content: "";
+  position: absolute;
+  inset: -25px -35px;
+  background: radial-gradient(ellipse at 50% 35%, rgba(6,182,212,0.22) 0%, rgba(129,140,248,0.16) 45%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .macbook-container {
   transform-style: preserve-3d;
   position: relative;
   width: 100%;
-  transform: rotateX(var(--base-tilt-x, 22deg)) rotateY(var(--base-tilt-y, -6deg));
+  transform: rotateX(var(--base-tilt-x, 14deg)) rotateY(var(--base-tilt-y, -4deg));
   transform-origin: center center;
   transition: transform 0.08s ease-out;
 }
@@ -437,9 +504,9 @@ h4 { font-size: 16px; letter-spacing: -0.01em; }
 .macbook-lid {
   transform-style: preserve-3d;
   transform-origin: bottom center;
-  transform: rotateX(var(--lid-rotate, -28deg));
+  transform: rotateX(var(--lid-rotate, -16deg));
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  background: #0d1222;
+  background: #0b0f19;
   border: 2px solid #2b354c;
   border-radius: 16px 16px 2px 2px;
   padding: 8px 8px 12px;
@@ -540,15 +607,119 @@ h4 { font-size: 16px; letter-spacing: -0.01em; }
 
 /* Screen Live UI */
 .screen-content {
-  padding: 12px 14px;
+  padding: 10px 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
   font-family: var(--font-body);
   flex: 1;
   justify-content: center;
-  background: radial-gradient(circle at 80% 20%, rgba(6,182,212,0.08), transparent 50%), #060912;
+  background: radial-gradient(circle at 80% 20%, rgba(6,182,212,0.09), transparent 50%), #060912;
 }
+
+/* Modern MacBook Retina Screen Cards */
+.mac-card {
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease;
+}
+.mac-card.mac-incoming {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-left: 3px solid #06b6d4;
+}
+.mac-card.mac-reasoning {
+  background: rgba(24, 18, 48, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-left: 3px solid #a855f7;
+}
+.mac-card.mac-resolved {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-left: 3px solid #10b981;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.1);
+}
+.mac-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  font-size: 9.5px;
+}
+.mac-user-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.mac-avatar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+}
+.mac-avatar.purple { background: rgba(168, 85, 247, 0.25); color: #c084fc; }
+.mac-avatar.emerald { background: rgba(16, 185, 129, 0.25); color: #34d399; }
+.mac-name { font-weight: 700; color: #f1f5f9; }
+.mac-pill-gray {
+  font-size: 8px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.06);
+  color: #94a3b8;
+  font-family: var(--font-mono);
+}
+.mac-pill-purple {
+  font-size: 8px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.mac-pill-emerald {
+  font-size: 8px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.mac-time { color: #64748b; font-size: 8.5px; }
+.mac-speed { color: #a855f7; font-family: var(--font-mono); font-weight: 600; }
+.mac-body {
+  font-size: 11px;
+  color: #e2e8f0;
+}
+.mac-body.highlight {
+  color: #f8fafc;
+}
+.mac-link {
+  color: #38bdf8;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.mac-pipeline-flow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9.5px;
+  color: #cbd5e1;
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+.flow-arrow { color: #a855f7; font-size: 9px; }
 
 /* MacBook Base Chassis */
 .macbook-base {
@@ -2427,4 +2598,26 @@ body::before {
 @keyframes border-beam-flow {
   0% { background-position: 0% 0%; }
   100% { background-position: 200% 0%; }
+}
+
+/* --- High-Tech Typewriter Effect & Blinking Cursor --- */
+.typewriter {
+  position: relative;
+  display: inline;
+  white-space: normal;
+}
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.82em;
+  background: var(--cyan, #06b6d4);
+  margin-left: 3px;
+  vertical-align: -0.04em;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.85), 0 0 20px rgba(6, 182, 212, 0.45);
+  animation: typewriter-blink 0.85s ease-in-out infinite;
+  border-radius: 1px;
+}
+@keyframes typewriter-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
