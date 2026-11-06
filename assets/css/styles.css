@@ -2636,119 +2636,54 @@ body::before {
   50% { opacity: 0; }
 }
 
-/* --- 3D Office Workstation Hero Visual --- */
-.office-scene {
+/* --- Cinematic Tech Founder Hero Visual (Matching User Reference) --- */
+.founder-hero-scene {
   width: 100%;
-  max-width: 540px;
+  max-width: 580px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1200px;
 }
 
-.office-aura {
+.founder-hero-glow {
   position: absolute;
-  inset: -25px -35px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(6,182,212,0.22) 0%, rgba(129,140,248,0.16) 45%, transparent 70%);
+  inset: -20px -30px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(6,182,212,0.2) 0%, rgba(99,102,241,0.15) 45%, transparent 70%);
   filter: blur(45px);
   pointer-events: none;
   z-index: 0;
-  animation: office-aura-pulse 5s ease-in-out infinite alternate;
-}
-@keyframes office-aura-pulse {
-  0% { opacity: 0.7; transform: scale(0.96); }
-  100% { opacity: 1; transform: scale(1.04); }
 }
 
-.office-frame {
+.founder-hero-frame {
   position: relative;
   z-index: 2;
   width: 100%;
-  border-radius: 20px;
-  overflow: visible;
-  animation: office-float 5s ease-in-out infinite;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-@keyframes office-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 25px 60px -10px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(6, 182, 212, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-.office-visual-img {
+.founder-hero-frame:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 30px 70px -10px rgba(0, 0, 0, 0.95),
+    0 0 65px rgba(6, 182, 212, 0.3);
+}
+
+.founder-hero-img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 25px 60px -10px rgba(0, 0, 0, 0.9),
-    0 0 45px rgba(6, 182, 212, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.office-scene:hover .office-visual-img {
+.founder-hero-frame:hover .founder-hero-img {
   transform: scale(1.02);
-  box-shadow:
-    0 30px 70px -10px rgba(0, 0, 0, 0.95),
-    0 0 55px rgba(6, 182, 212, 0.32);
-}
-
-/* Floating High-Tech Status Chips */
-.office-hud {
-  position: absolute;
-  z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 15px;
-  border-radius: var(--radius-full);
-  background: rgba(13, 19, 34, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6), 0 0 25px rgba(6,182,212,0.2);
-  font-size: 12px;
-  font-weight: 600;
-  color: #f8fafc;
-  white-space: nowrap;
-  animation: hud-float-subtle 4s ease-in-out infinite;
-}
-.office-hud.hud-top {
-  top: -12px;
-  right: -10px;
-  animation-delay: 0s;
-}
-.office-hud.hud-bottom {
-  bottom: -12px;
-  left: -10px;
-  animation-delay: 2s;
-}
-@keyframes hud-float-subtle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.hud-pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-.hud-pulse-dot.emerald {
-  background: #10b981;
-  box-shadow: 0 0 10px #10b981;
-  position: relative;
-}
-.hud-pulse-dot.emerald::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  border: 1px solid #10b981;
-  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-}
-.hud-icon.cyan {
-  color: #38bdf8;
-  filter: drop-shadow(0 0 6px #06b6d4);
 }
