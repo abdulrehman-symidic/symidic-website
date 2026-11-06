@@ -127,25 +127,39 @@ p { margin: 0; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 13px;
   font-family: var(--font-display);
   font-weight: 800;
-  letter-spacing: 0.1em;
-  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-size: 17px;
   text-transform: uppercase;
+  color: #fff;
 }
 .brand img {
-  width: 38px;
+  width: 44px;
   height: auto;
   border-radius: 10px;
+  transition: transform var(--transition);
+}
+.brand:hover img {
+  transform: scale(1.05);
 }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--muted);
+  gap: 34px;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+.nav-links a {
+  transition: color var(--transition);
+  position: relative;
+  color: #cbd5e1;
+}
+.nav-links .btn-sm {
+  font-size: 14.5px;
+  padding: 10px 22px;
 }
 .nav-links a { transition: color var(--transition); position: relative; }
 .nav-links a:hover,
