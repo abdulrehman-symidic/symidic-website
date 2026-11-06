@@ -540,4 +540,33 @@
     }, 2400);
   });
 
+
+  /* --- 3D Office Workstation Interactive Parallax Tilt --- */
+  const officeScene = document.querySelector(".office-scene");
+  if (officeScene && window.matchMedia("(hover: hover)").matches) {
+    let mouseX = 0, mouseY = 0;
+    let currX = 0, currY = 0;
+
+    officeScene.addEventListener("mousemove", (e) => {
+      const rect = officeScene.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      mouseX = x * 14;
+      mouseY = -y * 10;
+    });
+
+    officeScene.addEventListener("mouseleave", () => {
+      mouseX = 0;
+      mouseY = 0;
+    });
+
+    function animateOfficeTilt() {
+      currX += (mouseX - currX) * 0.1;
+      currY += (mouseY - currY) * 0.1;
+      officeScene.style.transform = `perspective(1000px) rotateY(${currX.toFixed(2)}deg) rotateX(${currY.toFixed(2)}deg)`;
+      requestAnimationFrame(animateOfficeTilt);
+    }
+    requestAnimationFrame(animateOfficeTilt);
+  }
+
 })();
